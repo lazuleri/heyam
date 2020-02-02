@@ -42,8 +42,7 @@ call :dl
 
 :dl
 cls
-cd %file%
-youtube-dl -i --no-warnings -q --console-title  %$subs% %$thumb% %$meta% %$list% %$audio% %$qual% %$url% -o "%%(uploader)s-%%(title)s.%%(ext)s"
+youtube-dl -i --no-warnings -q --console-title  %$subs% %$thumb% %$meta% %$list% %$audio% %$qual% %$url% -o "%file%\%%(uploader)s-%%(title)s.%%(ext)s"
 cls
 echo done!
 pause
