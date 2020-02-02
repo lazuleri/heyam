@@ -8,10 +8,7 @@ goto :eof
 #>
 
 Add-Type -AssemblyName System.Windows.Forms
-$f = new-object Windows.Forms.SaveFileDialog
-$f.Title = "vanille"
-$f.InitialDirectory = %UserProfiles%
-$f.Filter = "all files (*.*)|*.*"
-$f.ShowHelp = $true
+$f = new-object Windows.Forms.FolderBrowserDialog
+$f.RootFolder = %UserProfiles%
 [void]$f.ShowDialog()
-if ($f.Multiselect) { $f.FileNames } else { $f.FileName }
+if ($f.Multiselect) { $f.SelectedPath } else { $f.SelectedPath } 
